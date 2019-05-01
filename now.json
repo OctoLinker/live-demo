@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "name": "octolinker-demo",
+  "public": true,
+  "regions": [
+    "bru1",
+    "gru1",
+    "hnd1",
+    "iad1",
+    "sfo1"
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/.*",
+      "dest": "index.js"
+    }
+  ],
+  "alias": [
+    "octolinker-demo.now.sh"
+  ],
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@now/node"
+    },
+    {
+      "src": "/static/*",
+      "use": "@now/static"
+    }
+  ]
+}

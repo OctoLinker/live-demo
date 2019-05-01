@@ -1,0 +1,11 @@
+{
+  "name": "octolinker-demo",
+  "version": "1.0.0",
+  "description": "Live demo of OctoLinker – a browser extension for GitHub",
+  "main": "index.js",
+  "dependencies": {
+    "node-fetch": "^2.5.0"
+  },
+  "author": "Stefan Buck",
+  "license": "MIT"
+}

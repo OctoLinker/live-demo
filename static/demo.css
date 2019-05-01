@@ -1,0 +1,77 @@
+body {
+    margin-top: 64px;
+}
+
+header, .signup-prompt, .signup-prompt-bg {
+    display: none;
+}
+
+.octolinker-header {
+    position: fixed;
+    width: 100%;
+    background: white;
+    top: 0;
+    z-index: 99;
+    padding-top: 15px;
+    box-shadow: 0px 0px 3px 0px rgba(40,40,40,0.4);
+}
+
+.octolinker-header .warn {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.octolinker-header .warn span {
+    background-color: #fffbdd;
+    color: #735c0f;
+    text-align: center;
+    padding: 3px 9px;
+    border-radius: 4px;
+}
+
+.octolinker-header .inner {
+    display: grid;
+    grid-template-columns: 40px auto auto;
+    margin-bottom: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1012px;
+    padding: 5px 14px;
+}
+
+.octolinker-header .cta {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 11px;
+}
+
+.octolinker-header .browser-logos {
+    padding-left: 10px;
+}
+
+.octolinker-header a {
+    color: rgb(255, 0, 255);
+}
+
+.octolinker-link.octospot {
+    border-radius: 20px;
+    box-shadow: 0 0 0 rgba(255, 0, 255, 0.6);
+    animation: octoSpotlight 2s infinite;
+}
+
+@keyframes octoSpotlight {
+    0%{
+        box-shadow:0 0 0 0 rgba(255, 0, 255, 0.6);
+        background: rgba(255, 0, 255, 0.6);
+   }
+    70%{
+        box-shadow:0 0 0 1rem rgba(255, 0, 255, 0);
+        background: rgba(255, 0, 255, 0);
+   }
+    to{
+        box-shadow:0 0 0 0 rgba(255, 0, 255, 0);
+        background: rgba(255, 0, 255, 0);
+   }
+}
