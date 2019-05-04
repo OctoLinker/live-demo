@@ -65,24 +65,3 @@ header, .signup-prompt, .signup-prompt-bg {
 .octolinker-header a {
     color: #ff00ff;
 }
-
-.octolinker-link.octospot {
-    border-radius: 20px;
-    box-shadow: 0 0 0 rgba(255, 0, 255, 0.6);
-    animation: octoSpotlight 2s infinite;
-}
-
-@keyframes octoSpotlight {
-    0%{
-        box-shadow:0 0 0 0 rgba(255, 0, 255, 0.6);
-        background: rgba(255, 0, 255, 0.6);
-   }
-    70%{
-        box-shadow:0 0 0 1rem rgba(255, 0, 255, 0);
-        background: rgba(255, 0, 255, 0);
-   }
-    to{
-        box-shadow:0 0 0 0 rgba(255, 0, 255, 0);
-        background: rgba(255, 0, 255, 0);
-   }
-}
