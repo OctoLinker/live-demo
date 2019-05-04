@@ -5,9 +5,6 @@ const firefoxUrl = 'https://addons.mozilla.org/en-US/firefox/addon/octolinker/';
 const operaUrl = 'https://addons.opera.com/en/extensions/details/octolinker/';
 
 module.exports = `<div class="octolinker-header">
-    <div class="warn">
-        <span>This is not GitHub.com</span>
-    </div>
     <div class="inner">
         <a href="${websiteUrl}">
             <img src="${websiteUrl}/static/octolinker.png" height="30" alt="OctoLinker – browser extension for GitHub">

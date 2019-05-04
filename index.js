@@ -1,5 +1,6 @@
 const fetch = require('node-fetch');
-const octoHeader = require('./components/demo-header');
+const demoHeader = require('./components/demo-header');
+const demoFrame = require('./components/demo-frame');
 
 // This code runs the demo you are currently looking at.
 // Inspired by https://twitter.com/rauchg/status/1123374389863505921
@@ -10,9 +11,9 @@ module.exports = async (req, res) => {
     .replace('</body>', '<script src="/static/octolinker.js"></script></body>')
     .replace(
       '</head>',
-      `<link media='all' href='/static/demo.css' rel='stylesheet' />
+      `<link media="all" href="/static/demo.css" rel="stylesheet" />
       </head>
-      ${octoHeader}`
+      ${demoFrame}${demoHeader}`
     );
 
   res.end(html);
