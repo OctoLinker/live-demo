@@ -14,7 +14,14 @@ module.exports = async (req, res) => {
       `<link media="all" href="/static/demo.css" rel="stylesheet" />
       </head>
       ${demoFrame}${demoHeader}`
-    );
+    )
+    .replace(
+      '<meta name="google-analytics" content="UA-3769691-2">',
+      '<meta name="google-analytics" content="UA-88792224-5">'
+    )
 
   res.end(html);
 };
+
+
+
