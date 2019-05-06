@@ -44,12 +44,19 @@ header, .signup-prompt, .signup-prompt-bg {
 
 .octolinker-header .inner {
     display: grid;
-    grid-template-columns: 40px auto auto;
+    grid-template-columns: auto auto;
     margin-bottom: 3px;
     margin-left: auto;
     margin-right: auto;
     max-width: 1012px;
     padding: 5px 14px;
+}
+
+.octolinker-header .logo {
+    color: #222;
+    background: url(/static/octolinker.png) no-repeat;
+    background-size: 40px;
+    padding-left: 52px;
 }
 
 .octolinker-header .cta {
@@ -65,3 +72,9 @@ header, .signup-prompt, .signup-prompt-bg {
 .octolinker-header a {
     color: #ff00ff;
 }
+
+@media only screen and (max-width: 768px) {
+    .octolinker-header .hide-on-mobile {
+        display: none;
+    }
+  }
