@@ -1,5 +1,5 @@
 body {
-    margin-top: 64px;
+    margin-top: 50px;
 }
 
 header, .signup-prompt, .signup-prompt-bg {
@@ -8,7 +8,7 @@ header, .signup-prompt, .signup-prompt-bg {
 
 .demo-frame {
     position: fixed;
-    top: 70px;
+    top: 48px;
     right: 0;
     left: 0;
     bottom: 0;
@@ -19,9 +19,9 @@ header, .signup-prompt, .signup-prompt-bg {
 
 .demo-frame .warn {
     position: absolute;
-    top: -5px;
     width: 100%;
-    text-align: center;
+    top: -23px; 
+    text-align: center; 
 }
 
 .demo-frame .warn span {
@@ -39,17 +39,17 @@ header, .signup-prompt, .signup-prompt-bg {
     background: white;
     top: 0;
     z-index: 100;
-    padding-top: 15px;
+    height: 50px;
+}
+
+.reponav-wrapper .reponav-item {
+    padding-top: 10px;
 }
 
 .octolinker-header .inner {
     display: grid;
     grid-template-columns: auto auto;
-    margin-bottom: 3px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1012px;
-    padding: 5px 14px;
+    margin: 5px 20px;
 }
 
 .octolinker-header .logo {
@@ -62,19 +62,56 @@ header, .signup-prompt, .signup-prompt-bg {
 .octolinker-header .cta {
     display: flex;
     justify-content: flex-end;
-    padding-top: 11px;
 }
 
 .octolinker-header .browser-logos {
-    padding-left: 10px;
+    padding-left: 7px;
+}
+
+.octolinker-header .browser-logos img {
+    margin-left: 2px;
 }
 
 .octolinker-header a {
     color: #ff00ff;
 }
 
+
 @media only screen and (max-width: 768px) {
-    .octolinker-header .hide-on-mobile {
+    .octolinker-header .inner {
+        line-height: 50px;
+    }
+
+    .octolinker-header p,
+    .octolinker-header h2 {
         display: none;
     }
-  }
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        margin-top: 60px;
+    }
+
+    .demo-frame {
+        top: 60px;
+    }
+    
+    .octolinker-header {
+        height: 60px;
+    }
+
+    .octolinker-header .inner {
+        margin: 14px 20px;
+    }
+}
+
+@media only screen and (min-width: 1012px) {
+    .octolinker-header .cta {
+        padding-top: 11px;
+    }
+
+    .octolinker-header .browser-logos img {
+        margin-left: 0;
+    }
+}

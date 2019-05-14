@@ -6,7 +6,11 @@ const demoFrame = require('./components/demo-frame');
 // Inspired by https://twitter.com/rauchg/status/1123374389863505921
 module.exports = async (req, res) => {
   res.setHeader('Cache-Control', 's-maxage=3, stale-while-revalidate');
-  const html = (await (await fetch('https://github.com' + req.url)).text())
+  const html = (await (await fetch('https://github.com' + req.url, {
+    headers: {
+      'User-Agent': req.headers['user-agent'],
+    }
+  })).text())
     .replace(/(href=.)https?:\/\/github.com/g, '$1//' + req.headers.host)
     .replace('</body>', '<script src="/static/octolinker.js"></script></body>')
     .replace(
@@ -22,6 +26,3 @@ module.exports = async (req, res) => {
 
   res.end(html);
 };
-
-
-

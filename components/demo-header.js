@@ -10,7 +10,7 @@ module.exports = `<div class="octolinker-header">
             <h2>OctoLinker Demo</h2>
         </a>
         <div class="cta">
-            <p class="hide-on-mobile">Like what you see? Install <a href="${websiteUrl}">OctoLinker</a> now!</p>
+            <p>Like what you see? Install <a href="${websiteUrl}">OctoLinker</a> now!</p>
             <div class="browser-logos">
                 <a href="${chromeUrl}" rel="nofollow"><img src="/static/chrome.png" width="20"></a>
                 <a href="${firefoxUrl}" rel="nofollow"><img src="/static/firefox.png" width="20"></a>
