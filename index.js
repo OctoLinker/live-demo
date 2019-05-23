@@ -12,7 +12,9 @@ module.exports = async (req, res) => {
     }
   })).text())
     .replace(/(href=.)https?:\/\/github.com/g, '$1//' + req.headers.host)
-    .replace('</body>', '<script src="/static/octolinker.js"></script></body>')
+    .replace('</body>', 
+      `<script>window.chrome = window.chrome || {}</script>
+      <script src="/static/octolinker.js"></script></body>`)
     .replace(
       '</head>',
       `<link media="all" href="/static/demo.css" rel="stylesheet" />
