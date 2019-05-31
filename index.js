@@ -7,18 +7,20 @@ const demoFrame = require('./components/demo-frame');
 module.exports = async (req, res) => {
   
   if (req.url === '/') {
-    res.writeHead(302, {
+    res.writeHead(308, {
       'Location': '/OctoLinker/live-demo/blob/master/index.js#LO2'
     });
     return res.end();
   }
 
   res.setHeader('Cache-Control', 's-maxage=3, stale-while-revalidate');
-  const html = (await (await fetch('https://github.com' + req.url, {
+  const response = await fetch('https://github.com' + req.url, {
     headers: {
       'User-Agent': req.headers['user-agent'],
     }
-  })).text())
+  })
+
+  const html = (await response.text())
     .replace(/(href=.)https?:\/\/github.com/g, '$1//' + req.headers.host)
     .replace('</body>', 
       `<script>window.chrome = window.chrome || {}</script>
@@ -34,5 +36,10 @@ module.exports = async (req, res) => {
       '<meta name="google-analytics" content="UA-88792224-5">'
     )
 
+  const restirctedRoutes = ['https://github.com/login', 'https://github.com/join'];
+  if (restirctedRoutes.some(url => response.url.startsWith(url))) {
+    return res.end(html.replace(/<body[^>]*>(.*?)<\/body>/is, '<body><div class="pt-5 pb-4 text-center"><h3>For security reasons this url is not accessible in this demo.</h3></div></body>'));
+  }
+  
   res.end(html);
 };
