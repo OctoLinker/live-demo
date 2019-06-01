@@ -1,9 +1,18 @@
 const fetch = require('node-fetch');
-const demoHeader = require('./components/demo-header');
-const demoFrame = require('./components/demo-frame');
+const frame = require('./frame'); // <- Click here
 
+// OctoLinker
+//
+// Navigate through GitHub repositories faster than ever before!
+//
+// 1. Go to a file in GitHub
+// 2. Replace github.com with octolinker-demo.now.sh.
+//
+// OctoLinker is availble as browser extension for Chrome, Firefox and Opera.
+//
 // This code runs the demo you are currently looking at.
 // Inspired by https://twitter.com/rauchg/status/1123374389863505921
+
 module.exports = async (req, res) => {
   
   if (req.url === '/') {
@@ -20,16 +29,21 @@ module.exports = async (req, res) => {
     }
   })
 
+  let inlineScript = 'window.chrome = window.chrome || {};'
+  if (req.url.startsWith('/OctoLinker/live-demo/')) {
+    inlineScript += `document.body.classList.add('demo-page');`
+  }
+
   const html = (await response.text())
     .replace(/(href=.)https?:\/\/github.com/g, '$1//' + req.headers.host)
     .replace('</body>', 
-      `<script>window.chrome = window.chrome || {}</script>
+      `<script>${inlineScript}</script>
       <script src="/static/octolinker.js"></script></body>`)
     .replace(
       '</head>',
       `<link media="all" href="/static/demo.css" rel="stylesheet" />
       </head>
-      ${demoFrame}${demoHeader}`
+      ${frame}`
     )
     .replace(
       '<meta name="google-analytics" content="UA-3769691-2">',

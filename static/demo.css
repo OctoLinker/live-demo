@@ -115,3 +115,8 @@ header, .signup-prompt, .signup-prompt-bg {
         margin-left: 0;
     }
 }
+
+.demo-page .pl-c {
+    background: yellow;
+    padding: 3px 2px;
+}
