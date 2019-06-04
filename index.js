@@ -52,7 +52,7 @@ module.exports = async (req, res) => {
 
   const restirctedRoutes = ['https://github.com/login', 'https://github.com/join'];
   if (restirctedRoutes.some(url => response.url.startsWith(url))) {
-    return res.end(html.replace(/<body[^>]*>(.*?)<\/body>/is, '<body><div class="pt-5 pb-4 text-center"><h3>For security reasons this url is not accessible in this demo.</h3></div></body>'));
+    return res.end(html.replace(/<body[^>]*>(.*?)<\/body>/is, '<body><div class="pt-5 pb-4 text-center"><h3>For security reasons the login and sign-up page are not accessible in this demo.</h3></div></body>'));
   }
   
   res.end(html);
