@@ -41,7 +41,8 @@ module.exports = async (req, res) => {
       <script src="/static/octolinker.js"></script></body>`)
     .replace(
       '</head>',
-      `<link media="all" href="/static/demo.css" rel="stylesheet" />
+      `<meta name="robots" content="noindex" />
+      <link media="all" href="/static/demo.css" rel="stylesheet" />
       </head>
       ${frame}`
     )

@@ -5,7 +5,7 @@ require('node-fetch')
 require('url') 
 
 // Follows relative imports
-require('../index.js') 
+require('./index.js') 
 
 // OctoLinker supports many different languages including: 
 // composer, docker, go, Haskell, Homebrew, Java, 
@@ -15,6 +15,7 @@ const websiteUrl = "https://octolinker.now.sh";
 const chromeUrl = "https://chrome.google.com/webstore/detail/octolinker/jlmafbaeoofdegohdhinkhilhclaklkp";
 const firefoxUrl = "https://addons.mozilla.org/en-US/firefox/addon/octolinker/";
 const operaUrl = "https://addons.opera.com/en/extensions/details/octolinker/";
+const edgeUrl = "https://microsoftedge.microsoft.com/addons/detail/lbbanfffjfmfdahnfbklminikafhcjjb";
 
 module.exports = `<div class="demo-frame">
     <div class="warn">
@@ -31,6 +32,7 @@ module.exports = `<div class="demo-frame">
             <div class="browser-logos">
                 <a href="${chromeUrl}" data-ga-click="Header, go to chrome" rel="nofollow"><img src="/static/chrome.png" width="20"></a>
                 <a href="${firefoxUrl}" data-ga-click="Header, go to firefox" rel="nofollow"><img src="/static/firefox.png" width="20"></a>
+                <a href="${edgeUrl}" data-ga-click="Header, go to edge" rel="nofollow"><img src="/static/edge.png" width="20"></a>
                 <a href="${operaUrl}" data-ga-click="Header, go to opera" rel="nofollow"><img src="/static/opera.png" width="20"></a>
             </div>
         </div>
