@@ -120,3 +120,7 @@ header, .signup-prompt, .signup-prompt-bg {
     background: yellow;
     padding: 3px 2px;
 }
+
+.js-cookie-consent-banner {
+    display: none;
+}
